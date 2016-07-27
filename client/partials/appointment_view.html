@@ -2,7 +2,7 @@
 <h5><a href="#/login">Logout</a></h5>
 
 
-<label>Search: <input ng-model="appointment.user"></label>
+<!-- <label>Search: <input ng-model="appointment.user"></label> -->
 
 <table>
     <thead>
@@ -20,7 +20,7 @@
         </th>
     </thead>
     <tbody>
-        <tr ng-repeat="appointment in appointments track by $index | orderBy appointment.date">
+        <tr ng-repeat="appointment in appointments track by $index">
             <td>
                 {{appointment.date}}
             </td>
