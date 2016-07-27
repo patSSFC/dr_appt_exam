@@ -1,0 +1,10 @@
+<h2>New Appointment</h2>
+<h3>{{success.data}}</h3>
+
+<form class="" action="index.html" method="post">
+    Date: <input type="date" name="name" ng-model="formData.date">
+    Time: <input type="time" name="name" ng-model="formData.time">
+    <textarea name="name" rows="8" cols="40" ng-model="formData.complaint"></textarea>
+    <a href="#/">cancel!</a>
+    <button ng-click="onNewAppt()" type="button" name="button">Add answer!</button>
+</form>
