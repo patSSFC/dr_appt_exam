@@ -1,6 +1,6 @@
 <h2>Doctors Appointments</h2>
-<h3 ng-show="success">{{success.data}}</h3>
-<h4>{{user}}</h4>
+<h5><a href="#/login">Logout</a></h5>
+
 
 <label>Search: <input ng-model="appointment.user"></label>
 
@@ -20,7 +20,7 @@
         </th>
     </thead>
     <tbody>
-        <tr ng-repeat="appointment in appointments track by $index">
+        <tr ng-repeat="appointment in appointments track by $index | orderBy appointment.date">
             <td>
                 {{appointment.date}}
             </td>
