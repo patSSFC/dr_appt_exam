@@ -1,6 +1,9 @@
 <h2>Login!</h2>
 
-<form class="" action="index.html" method="post">
-    Name: <input type="text" name="name" ng-model="formData.username">
+<form name="loginForm" action="index.html" method="post">
+    Name: <input type="text" name="name" ng-model="formData.username" required>
     <button ng-click="onLogin()" type="button" name="button">Login!</button>
+    <p ng-show="loginForm.name.$touched && loginForm.name.$error.required">
+        Please enter your usernam!
+    </p>
 </form>
