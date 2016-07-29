@@ -19,20 +19,5 @@ drApp.factory('userFactory', function($http, $routeParams) {
             });
     }
 
-    factory.getAllUsers = function(callback) {
-        $http.get('/login')
-            .then(function successCallback(returnData) {
-                // this callback will be called asynchronously
-                // when the response is available
-                // console.log(returnData);
-                callback(returnData.data);
-            }, function errorCallback(err) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-                console.log("error in login!");
-                console.log(err);
-            });
-    }
-
     return factory;
 })

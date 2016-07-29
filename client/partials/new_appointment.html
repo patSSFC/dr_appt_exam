@@ -1,11 +1,25 @@
 <h2>New Appointment</h2>
-<h3>{{success.data}}</h3>
-
-<form class="" action="index.html" method="post">
-    <input type="text" name="hidden" value="">
-    Date: <input type="date" name="name" ng-model="formData.date">
-    Time: <input type="time" name="name" ng-model="formData.time">
-    <textarea name="name" rows="8" cols="40" ng-model="formData.complaint"></textarea>
-    <a href="#/">cancel!</a>
+<!-- <h3>{{success.data}}</h3> -->
+<h4>{{user.username}}</h4>
+<form name="newApptForm" action="index.html" method="post">
+    Date: <input type="date" name="date" ng-model="formData.date" placeholder="yyyy-MM-dd" min="2016-07-29" max="2020-12-31" required>
+    Time: <input type="time" name="time" ng-model="formData.time" placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required>
+    <textarea name="complaint" rows="8" cols="40" ng-model="formData.complaint" required></textarea>
+    <a href="#/view">cancel!</a>
     <button ng-click="onNewAppt()" type="button" name="button">Add answer!</button>
+    <p ng-show="newApptForm.date.$touched && newApptForm.date.$error.required">
+        Date is a required field!
+    </p>
+    <p ng-show="newApptForm.date.$touched && !newApptForm.date.$valid">
+        Date must be between 7/29/16 and 12/31/2020
+    </p>
+    <p ng-show="newApptForm.time.$touched && newApptForm.time.$error.required">
+        Time is a required filed!
+    </p>
+    <p ng-show="newApptForm.time.$touched && !newApptForm.time.$valid">
+        Time must be between 8:00AM to 5:00PM
+    </p>
+    <p ng-show="newApptForm.complaint.$touched && !newApptForm.complaint.$valid">
+        Please fill in the complaint section
+    </p>
 </form>

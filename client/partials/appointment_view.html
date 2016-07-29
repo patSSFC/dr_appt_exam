@@ -1,7 +1,6 @@
 <h2>Doctors Appointments</h2>
 <h5><a href="#/login">Logout</a></h5>
-<h5 ng-model="user.username"></h5>
-<!-- <label>Search: <input ng-model="appointment.user"></label> -->
+<h5>{{user.username}}</h5>
 
 <table>
     <thead>
@@ -27,12 +26,14 @@
                 {{appointment.time | date:'shortTime'}}
             </td>
             <td>
-                {{appointment.user}}
+                {{appointment._username.username}}
             </td>
             <td>
                 {{appointment.complaint}}
             </td>
-
+            <td ng-show="appointment._username.username == user.username">
+                <button type="button" name="button" ng-click="onDelete(appointment._id)">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>

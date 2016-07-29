@@ -14,8 +14,8 @@ module.exports = function(app) {
         console.log("inside POST /login route");
         user.login(req, res);
     });
-    app.get('/login', function(req, res) {
-        console.log("inside GET /login route");
-        user.getAllUsers(req, res);
+    app.post('/view', function(req, res) {
+        console.log("inside DELETE /view route");
+        appointment.deleteAppt(req, res);
     });
 };

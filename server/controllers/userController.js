@@ -24,14 +24,5 @@ module.exports = {
                 }
             }
         });
-    },
-    getAllUsers : function(req ,res) {
-        User.find({}, function(err, users) {
-            if(err) {
-                res.status(500).json(err);
-            } else {
-                res.status(200).json(users);
-            }
-        });
     }
 }
