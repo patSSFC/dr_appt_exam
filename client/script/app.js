@@ -4,7 +4,7 @@ drApp.config(function($routeProvider) {
     $routeProvider
     .when('/login', {
         templateUrl: '../partials/login.html',
-        controller: 'ApptController'
+        controller: 'UserController'
     })
     .when('/view', {
         templateUrl: '../partials/appointment_view.html',

@@ -1,7 +1,6 @@
 <h2>Doctors Appointments</h2>
 <h5><a href="#/login">Logout</a></h5>
-
-
+<h5 ng-model="user.username"></h5>
 <!-- <label>Search: <input ng-model="appointment.user"></label> -->
 
 <table>
@@ -22,10 +21,10 @@
     <tbody>
         <tr ng-repeat="appointment in appointments track by $index">
             <td>
-                {{appointment.date}}
+                {{appointment.date | date:'medium'}}
             </td>
             <td>
-                {{appointment.time}}
+                {{appointment.time | date:'shortTime'}}
             </td>
             <td>
                 {{appointment.user}}
@@ -37,5 +36,9 @@
         </tr>
     </tbody>
 </table>
+
+<!-- <p ng-show="!my.success">
+    {{response}}
+</p> -->
 
 <a href="#/new">Make a New Appointment</a>
